@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>img/apple_line.png</file>
+        <file>img/OIP.jpg</file>
+    </qresource>
+</RCC>
