@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>imgs/MusicIcon.png</file>
+        <file>imgs/Collection.png</file>
+        <file>imgs/MusicList.png</file>
+        <file>imgs/Search.png</file>
+        <file>imgs/RankList.png</file>
+        <file>imgs/Settings.png</file>
+        <file>imgs/Close.png</file>
+        <file>imgs/Minimize.png</file>
+        <file>imgs/PlaybackIcon.png</file>
+        <file>imgs/PlayerNext.png</file>
+        <file>imgs/PlayerPause.png</file>
+        <file>imgs/PlayerPlay.png</file>
+        <file>imgs/PlayerPrevious.png</file>
+        <file>imgs/HappyFace.png</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file>applicationwindow.qss</file>
+    </qresource>
+</RCC>

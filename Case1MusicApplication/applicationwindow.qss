@@ -1,0 +1,55 @@
+QWidget {
+    font-family: "Microsoft YaHei";
+}
+
+QWidget#ApplicationCentralWidget {
+    background: white;
+    border: none;
+    border-radius: 8px;
+}
+
+QToolButton {
+    background: transparent;
+}
+
+QToolButton:checked {
+    background: pink;
+    border: none;
+}
+
+QPushButton {
+    border: none;
+    background: transparent;
+}
+
+QPushButton:pressed {
+    background: pink;
+}
+
+QLineEdit {
+    border: 1px solid pink;
+    border-radius: 4px;
+    padding-left: 8px;
+}
+
+QSlider::groove:horizontal{
+    height: 10px;
+    left: 0px;
+    right: 0px;
+    border:0px;
+    border-radius: 4px;
+    background:rgba(0,0,0,50);
+}
+
+QSlider::handle:horizontal {
+    background-color: pink;
+    width: 16px;
+    border-radius: 8px;
+
+    margin: -3px 0;
+}
+
+QSlider::sub-page:horizontal{
+    border-radius:4px;
+    background: #FF82AA;
+}
