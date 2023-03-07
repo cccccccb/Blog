@@ -2,6 +2,7 @@
 #include "./ui_MainWindow.h"
 
 #include <QHBoxLayout>
+#include <QLabel>
 #include <QPushButton>
 
 // 创建一个自动构造并添加到布局的静态函数
@@ -31,8 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
     // 创建主布局，并将布局设置到中心控件 centralWidget 上
     QHBoxLayout *mainLayout = new QHBoxLayout(centralWidget);
 
-    // 调用演示弹簧的函数
-    displayStretch(mainLayout);
+    displaySizePolicyStretch(mainLayout);
 }
 
 MainWindow::~MainWindow()
@@ -59,3 +59,65 @@ void MainWindow::displayStretch(QHBoxLayout *mainLayout)
     mainLayout->addStretch();
 }
 
+
+void MainWindow::displayStretchFactor(QHBoxLayout *mainLayout)
+{
+    // 创建一个按钮并添加到对象树中
+    QPushButton *button = new QPushButton(this);
+    button->setText("Button");
+    // 添加按钮到主布局中, 并设置其弹性因子为 1
+    mainLayout->addWidget(button, 1);
+
+    // 创建一个文本标签并添加到对象树中
+    QLabel *label = new QLabel(this);
+    label->setText("This is a very very very very very very long sentence.");
+    // 为了方便演示，我们将文本的文字排列使用为右对齐，以演示文本标签的具体大小
+    // 使用右对齐和垂直居中对齐的混合方式
+    label->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+    // 添加文本标签到对象树中, 并调整其弹簧系数为 2
+    mainLayout->addWidget(label, 2);
+}
+
+void MainWindow::displaySizePolicy(QHBoxLayout *mainLayout)
+{
+    // 创建一个按钮并添加到对象树中
+    QPushButton *button = new QPushButton(this);
+    button->setText("Button");
+    // 添加按钮到主布局中
+    mainLayout->addWidget(button);
+
+    // 创建一个文本标签并添加到对象树中
+    QLabel *label = new QLabel(this);
+    label->setText("This is a very very very very very very long sentence.");
+
+    // 调整按钮的大小策略，水平方向调整为扩大，垂直方向跟随默认策略。
+    label->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Preferred);
+    // 添加文本标签到主布局中
+    mainLayout->addWidget(label);
+}
+
+static void adjustStretchFactorBySizePolicy(QWidget *widget, int stretchFactor)
+{
+    QSizePolicy sizePolicy = widget->sizePolicy();
+
+    sizePolicy.setHorizontalStretch(stretchFactor);
+    widget->setSizePolicy(sizePolicy);
+}
+
+void MainWindow::displaySizePolicyStretch(QHBoxLayout *mainLayout)
+{
+    // 创建一个按钮并添加到对象树中
+    QPushButton *button = new QPushButton(this);
+    button->setText("Button");
+    adjustStretchFactorBySizePolicy(button, 1);
+    // 添加按钮到主布局中
+    mainLayout->addWidget(button, 5);
+
+    // 创建一个文本标签并添加到对象树中
+    QLabel *label = new QLabel(this);
+    label->setText("This is a very very very very very very long sentence.");
+    adjustStretchFactorBySizePolicy(label, 2);
+
+    // 添加文本标签到主布局中
+    mainLayout->addWidget(label, 2);
+}

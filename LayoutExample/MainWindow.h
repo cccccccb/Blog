@@ -19,6 +19,9 @@ public:
 
     void displayMarginAndSpacing(QHBoxLayout *mainLayout);
     void displayStretch(QHBoxLayout *mainLayout);
+    void displayStretchFactor(QHBoxLayout *mainLayout);
+    void displaySizePolicy(QHBoxLayout *);
+    void displaySizePolicyStretch(QHBoxLayout *);
 
 private:
     Ui::MainWindow *ui;
