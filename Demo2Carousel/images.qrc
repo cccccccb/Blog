@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/Number1.png</file>
+        <file>res/Number2.png</file>
+        <file>res/Number3.png</file>
+        <file>res/Number4.png</file>
+        <file>res/Number5.png</file>
+        <file>res/1.png</file>
+        <file>res/2.png</file>
+        <file>res/3.png</file>
+        <file>res/4.png</file>
+        <file>res/5.png</file>
+        <file>res/radio.png</file>
+        <file>res/radio_checked.png</file>
+    </qresource>
+</RCC>
